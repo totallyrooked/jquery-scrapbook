@@ -1,0 +1,68 @@
+<?php 
+namespace Concrete\Package\UnopinionatedCommerce\Block\TtlRkdWeather;
+
+use Concrete\Core\Block\BlockController;
+use Loader;
+use Page;
+
+class Controller extends BlockController {
+    
+    protected $btTable = 'btTtlRkdWeather';
+    protected $btInterfaceWidth = "600";
+    protected $btWrapperClass = 'ccm-ui';
+    protected $btInterfaceHeight = "465";
+    protected $btCacheBlockRecord = true;
+    protected $btExportFileColumns = array('fID');
+    protected $btCacheBlockOutput = true;
+    protected $btCacheBlockOutputOnPost = true;
+    protected $btCacheBlockOutputForRegisteredUsers = false;
+    protected $btIgnorePageThemeGridFrameworkContainer = true;
+
+
+    public function getBlockTypeDescription()
+    {
+        return t("Display the weather at a give location.");
+    }
+
+    public function getBlockTypeName()
+    {
+        return t("UnopinionatedCommerce Weather");
+    }
+
+    public function composer()
+    {
+        $this->edit();
+    }
+
+
+    public function add()
+    {
+        $this->edit();
+    }
+    
+    public function edit()
+    {
+      $this->requireAsset('core/file-manager');
+    }
+
+    public function on_start()
+    {
+        $this->requireAsset('ttlRkdSystem');
+    }
+    public function view()
+    {
+        $this->requireAsset('ttlRkdSystem');
+    }
+    public function registerViewAssets()
+    {
+        $this->requireAsset('ttlRkdSystem');
+    }
+
+    public function save($data)
+    {
+        $args['location'] = isset($data['location']) ? $data['location'] : '';
+
+        parent::save($args);
+    }
+}
+?>
