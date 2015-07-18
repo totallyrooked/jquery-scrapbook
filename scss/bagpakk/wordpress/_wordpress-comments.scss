@@ -1,0 +1,155 @@
+/*-----------------------------------------------------------------------------------*/
+/*  Wordpress comments
+/*-----------------------------------------------------------------------------------*/
+#respond {
+	margin:1.5em auto;
+}
+
+.comment{
+	@extend .clearfix;
+}
+
+.comment-list,
+.comment-list .children {
+	@extend .clearfix;
+	padding: 0;
+	
+	li{
+		list-style-type: none!important;
+		#reply-title,
+		#respond #commentform,
+		#respond iframe{
+			width: 100%;
+		}
+	}
+	
+	.comment{
+		
+	}
+	
+}
+
+.comment-list .children {
+	margin-left: 8%;
+}
+
+.comment-list > li:after,
+.comment-list .children > li:before {
+	height:0.4rem;
+	background: black(.05);
+	content: "";
+	display: block;
+	width: 100%;
+}
+
+.comment-list > li:last-child:after {
+	display: none;
+}
+
+.comment {
+	padding: 1.5em 0;
+}
+
+.comment-author {
+	//float: left;
+	max-width: 8rem;
+}
+
+.avatar {
+	display: block;
+	margin-bottom: 0.8em;
+}
+
+
+.comment-reply-title, #cancel-comment-reply-link{
+	display: inline;
+}
+
+ #cancel-comment-reply-link{
+	float: right;
+}
+
+.comment-reply-link {
+	font-style: normal;
+	font-weight: 700;
+}
+
+.comment-meta .fn, .comment-meta .fn a{
+	color:$font-color-hard;
+	font-style: normal;
+	font-weight: 700;
+}
+
+.comment-reply-link {
+	color: $accent;
+}
+
+cite.fn{
+	display: block;
+}
+
+cite.fn:before{
+	display: none;
+	
+}
+
+.no-avatars .comment-author {
+	float: none;
+	margin: 0 0 0.5em;
+	max-width: 100%;
+}
+
+.no-avatars .comment-meta,
+.no-avatars .comment-content,
+.no-avatars .reply {
+	width: 100%;
+}
+
+.comment-list .edit-link {
+	margin-left: 2rem;
+}
+
+.comment-content{
+	
+}
+
+.comment-meta,
+.comment-content,
+.reply {
+	// float: right;
+	// width: 79%;
+	// @include calc( width, '100% - 124px');
+}
+
+.comment-meta,
+.comment-meta a {
+	margin-bottom: 1rem;
+}
+
+.ping-meta {
+	line-height: 2;
+}
+
+
+.comment-awaiting-moderation {
+	
+}
+
+.no-comments{
+	text-align: center;
+}
+
+.form-allowed-tags{
+	
+}
+
+.comments-title{
+	padding-top: 1em;
+}
+
+.trackback, .pingback{
+
+	p{
+		margin-top: 1.618rem;
+	}
+}

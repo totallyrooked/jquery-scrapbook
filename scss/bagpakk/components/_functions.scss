@@ -1,0 +1,12 @@
+// golden ratio
+$golden : 1.618;
+
+// black color opacity
+@function black($opacity){
+	@return rgba(0,0,0,$opacity)
+}
+
+// white color opacity
+@function white($opacity){
+	@return rgba(255,255,255,$opacity)
+}
